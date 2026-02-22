@@ -62,27 +62,27 @@
             <!-- Services Grid -->
             <div class="buttons grid grid-cols-3 gap-4 rounded-b-lg ">
                 <!-- Add Money -->
-                <button class="btn flex-col h-full py-4 btn-soft rounded-2xl">
+                <button onclick="showonly('add-money')" class="btn flex-col h-full py-4 btn-soft rounded-2xl">
                     <img src="assets/opt-1.png" alt="Add Money Icon">
                     <p class="text-gray-700 font-medium text-center text-xs">Add Money</p>
                 </button>
                 <!-- Cashout -->
-                <button class="btn flex-col h-full py-4 btn-soft rounded-2xl">
+                <button onclick="showonly('cash-out')" class="btn flex-col h-full py-4 btn-soft rounded-2xl">
                     <img src="assets/opt-2.png" alt="Cashout Icon">
                     <p class="text-gray-700 font-medium text-center text-xs">Cashout</p>
                 </button>
                 <!-- Transfer Money -->
-                <button class="btn flex-col h-full py-4 btn-soft rounded-2xl">
+                <button onclick="showonly('transfer-money')" class="btn flex-col h-full py-4 btn-soft rounded-2xl">
                     <img src="assets/opt-3.png" alt="Transfer Money Icon">
                     <p class="text-gray-700 font-medium text-center text-xs">Transfer Money</p>
                 </button>
                 <!-- Get Bonus -->
-                <button class="btn flex-col h-full py-4 btn-soft rounded-2xl">
+                <button onclick="showonly('get-bonus')" class="btn flex-col h-full py-4 btn-soft rounded-2xl">
                     <img src="assets/opt-4.png" alt="Get Bonus Icon">
                     <p class="text-gray-700 font-medium text-center text-xs">Get Bonus</p>
                 </button>
                 <!-- Pay Bill -->
-                <button class="btn flex-col h-full py-4 btn-soft rounded-2xl">
+                <button onclick="showonly('pay-bill')" class="btn flex-col h-full py-4 btn-soft rounded-2xl">
                     <img src="assets/opt-5.png" alt="Pay Bill Icon">
                     <p class="text-gray-700 font-medium text-center text-xs">Pay Bill</p>
                 </button>
@@ -93,7 +93,45 @@
                 </button>
             </div>
         </main>
-        <section class="max-w-md mx-auto p-6 bg-slate-100">
+
+        <section id="add-money" class="max-w-md mx-auto p-6 bg-slate-100">
+            <h2 class="text-lg text-gray-900 mb-6">Add Money</h2>
+            <div class="form mt-8">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 mx-auto rounded-3xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="label text-black mb-2">Select A Bank</label>
+                            <select id="bank-select" class="select rounded-2xl bg-gray-100 border-0 w-full">
+                                <option disabled selected>Select bank</option>
+                                <option>City Bank</option>
+                                <option>Dutch Bangla Bank</option>
+                                <option>BRAC Bank</option>
+                                <option>Eastern Bank</option>
+                                <option>Islami Bank</option>
+                            </select>
+                            
+                            <label class="label text-black m-2">Bank Account Number</label>
+                            <input id="account-number" maxlength="16" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter 11 digit account number" />
+                            
+                            <label class="label text-black m-2">Amount to Add</label>
+                            <input id="add-amount" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Add Amount to withdraw" />
+                            
+                            <label class="label text-black m-2">Pin Number</label>
+                            <input id="add-pin" type="password" maxlength="4" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter 4 digit pin number" />
+        
+                            <button id="add-money-btn"
+                                class="btn bg-indigo-600 text-white mt-4 rounded-full hover:bg-indigo-700">Add Money</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="cash-out" class="max-w-md mx-auto p-6 bg-slate-100" style="display: none;">
             <h2 class="text-lg  text-gray-900 mb-6">Cash Out</h2>
             <div class="form mt-8 ">
                 <div class="card bg-base-100 w-full max-w-sm shrink-0 mx-auto rounded-3xl">
@@ -115,7 +153,96 @@
                     </div>
                 </div>
         </section>
-    </div>
 
-    <script src="cashout.js"></script>
+        <section id="transfer-money" class="max-w-md mx-auto p-6 bg-slate-100" style="display: none;">
+            <h2 class="text-lg text-gray-900 mb-6">Transfer Money</h2>
+            <div class="form mt-8">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 mx-auto rounded-3xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="label text-black mb-2">User Account Number</label>
+                            <input id="transfer-account" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter 11 digit number" />
+                            
+                            <label class="label text-black m-2">Amount</label>
+                            <input id="transfer-amount" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter amount to transfer" />
+                            
+                            <label class="label text-black m-2">Pin Number</label>
+                            <input id="transfer-pin" type="password" maxlength="4" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter 4 digit pin number" />
+        
+                            <button id="transfer-btn"
+                                class="btn bg-indigo-600 text-white mt-4 rounded-full hover:bg-indigo-700">Send Now</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-bonus" class="max-w-md mx-auto p-6 bg-slate-100" style="display: none;">
+            <h2 class="text-lg text-gray-900 mb-6">Get Bonus</h2>
+            <div class="form mt-8">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 mx-auto rounded-3xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="label text-black mb-2">Enter Bonus Coupon</label>
+                            <input id="bonus-coupon" maxlength="20" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter your coupon" />
+        
+                            <button id="bonus-btn"
+                                class="btn bg-indigo-600 text-white mt-4 rounded-full hover:bg-indigo-700">Get Bonus</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pay-bill" class="max-w-md mx-auto p-6 bg-slate-100" style="display: none;">
+            <h2 class="text-lg text-gray-900 mb-6">Pay Bill</h2>
+            <div class="form mt-8">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 mx-auto rounded-3xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="label text-black mb-2">Select To Pay</label>
+                            <select id="bill-select" class="select rounded-2xl bg-gray-100 border-0 w-full">
+                                <option disabled selected value="">Select back</option>
+                                <option>Electricity Bill</option>
+                                <option>Gas Bill</option>
+                                <option>Water Bill</option>
+                                <option>Internet Bill</option>
+                                <option>Phone Bill</option>
+                            </select>
+                            
+                            <label class="label text-black m-2">Biller Account Number</label>
+                            <input id="biller-account" maxlength="16" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter account number" />
+                            
+                            <label class="label text-black m-2">Amount to Pay</label>
+                            <input id="bill-amount" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Add Amount to pay" />
+                            
+                            <label class="label text-black m-2">Pin Number</label>
+                            <input id="bill-pin" type="password" maxlength="4" class="input rounded-2xl bg-gray-100 border-0"
+                                placeholder="Enter 4 digit pin number" />
+        
+                            <button id="pay-bill-btn"
+                                class="btn bg-indigo-600 text-white mt-4 rounded-full hover:bg-indigo-700">Pay Now</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script/common_funtion.js"></script>
+
+    <script src="script/addmoney.js"></script>
+
+    <script src="script/cashout.js"></script>
+
+    <script src="script/transfer.js"></script>
+
+    <script src="script/bonus.js"></script>
+
+    <script src="script/paybill.js"></script>
 </body>

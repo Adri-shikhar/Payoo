@@ -1,12 +1,10 @@
 document.getElementById('withdraw-btn').addEventListener('click', function() {
 // Get the values from the input fields
-    const agentNumber = document.getElementById('agent-number').value;
-    const cashoutAmount = document.getElementById('amount').value;
-    const pin = document.getElementById('pin').value;
+    const agentNumber = getvalueinputfield('agent-number');
+    const cashoutAmount = getvalueinputfield('amount');
+    const pin = getvalueinputfield('pin');
 
-    console.log('Agent Number:', agentNumber);
-    console.log('Amount:', cashoutAmount);
-    console.log('PIN:', pin);
+    
 
     //Get the current balance
     const currentBalance = document.getElementById('balance').innerText;
