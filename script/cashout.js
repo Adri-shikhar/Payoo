@@ -15,6 +15,7 @@ document.getElementById('withdraw-btn').addEventListener('click', function() {
     if( pin == '1234' && cashoutAmount <= currentBalance) {
 
         document.getElementById('balance').innerText = newbalance;
+        addTransaction('Cash Out', cashoutAmount);
         alert('Cashout successful!');
     }
     else {

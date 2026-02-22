@@ -21,6 +21,7 @@ document.getElementById('bonus-btn').addEventListener('click', function() {
         const newBalance = currentBalance + bonusAmount;
         
         document.getElementById('balance').innerText = newBalance;
+        addTransaction('Bonus Reward', bonusAmount);
         alert(`Bonus applied! You received $${bonusAmount}`);
         
         // Clear input field

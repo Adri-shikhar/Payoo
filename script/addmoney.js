@@ -29,6 +29,7 @@ document.getElementById('add-money-btn').addEventListener('click', function() {
         const currentBalance = getbalance();
         const newBalance = currentBalance + Number(amount);
         document.getElementById('balance').innerText = newBalance;
+        addTransaction('Bank Deposit', amount);
         alert('Money added successfully!');
     }
    

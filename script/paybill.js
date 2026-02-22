@@ -28,6 +28,7 @@ document.getElementById('pay-bill-btn').addEventListener('click', function() {
         if(Number(amount) <= currentBalance) {
             const newBalance = currentBalance - Number(amount);
             document.getElementById('balance').innerText = newBalance;
+            addTransaction(selectedBill, amount);
             alert(`Bill paid successfully! ${selectedBill}: $${amount}`);
             
             // Clear input fields

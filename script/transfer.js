@@ -26,6 +26,7 @@ document.getElementById('transfer-btn').addEventListener('click', function() {
         if(Number(amount) <= currentBalance) {
             const newBalance = currentBalance - Number(amount);
             document.getElementById('balance').innerText = newBalance;
+            addTransaction('Money Transfer', amount);
             alert('Transfer successful!');
             
             // Clear input fields
