@@ -7,7 +7,7 @@ document.getElementById('withdraw-btn').addEventListener('click', function() {
     
 
     //Get the current balance
-    const currentBalance = document.getElementById('balance').innerText;
+    const currentBalance = getbalance();
     console.log('Current Balance:', currentBalance);
 
     const newbalance = Number(currentBalance) - Number(cashoutAmount);
