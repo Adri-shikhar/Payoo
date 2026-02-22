@@ -26,10 +26,10 @@
 
 <body>
     <div class="min-h-screen max-w-md bg-base-200 mx-auto bg-slate-100">
-        <header class=" p-6 border-b-1 border-gray-200 bg-white">
+        <header class=" p-6 border-b-1 border-gray-200 bg-white sticky top-0 z-10">
             <div class="flex items-center justify-between">
                 <!-- Logo and Balance -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 ">
                     <img src="assets/logo.png" alt="Payoo Logo" class="w-16 h-16">
                     <div>
                         <h1 class="text-sm font-bold text-gray-900">$<span id="balance">45000</span></h1>
@@ -100,16 +100,16 @@
                     <div class="card-body">
                         <fieldset class="fieldset">
                             <label class="label text-black mb-2">Agent Number</label>
-                            <input id="mobile-number" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
+                            <input id="agent-number" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
                                 placeholder="Enter 11 digit number" />
                                 <label class="label text-black m-2">Amount</label>
-                            <input id="mobile-number" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
+                            <input id="amount" maxlength="11" class="input rounded-2xl bg-gray-100 border-0"
                                 placeholder="Enter amount to windrow" />
                             <label class="label text-black  m-2">4 Digit Pin</label>
                             <input id="pin" type="password" maxlength="4" class="input rounded-2xl bg-gray-100 border-0"
                                 placeholder="Enter 4-digit PIN" />
         
-                            <button id="loginButton"
+                            <button id="withdraw-btn"
                                 class="btn btn-blue bg-blue-800 text-white mt-4 rounded-4xl">Withdraw</button>
                         </fieldset>
                     </div>
@@ -117,4 +117,5 @@
         </section>
     </div>
 
+    <script src="cashout.js"></script>
 </body>
